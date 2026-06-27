@@ -2,239 +2,221 @@
 <html lang="id">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Nongkrong.online | Coming Soon</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Nongkrong.online - Coming Soon</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 <style>
-
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:'Poppins',sans-serif;
-}
-
+*{margin:0;padding:0;box-sizing:border-box}
 body{
-
-background:linear-gradient(135deg,#ff8a00,#ff5f6d);
+font-family:Poppins,sans-serif;
+background:linear-gradient(135deg,#ff7a18,#ff5f6d);
 min-height:100vh;
+color:#222;
+overflow-x:hidden;
+}
+body:before,body:after{
+content:"";
+position:fixed;
+border-radius:50%;
+filter:blur(90px);
+opacity:.35;
+z-index:-1;
+}
+body:before{width:320px;height:320px;background:#ffd56b;left:-80px;top:-60px}
+body:after{width:280px;height:280px;background:#fff;right:-60px;bottom:-60px}
+.container{width:min(1180px,92%);margin:auto;padding:30px 0 60px}
+nav{display:flex;justify-content:space-between;align-items:center;color:#fff}
+.logo{font-size:2rem;font-weight:800}
+.logo span{color:#ffe08a}
+.hero{
+margin-top:35px;
+display:grid;
+grid-template-columns:1.1fr .9fr;
+gap:45px;
+align-items:center;
+}
+.card{
+background:#fff;
+padding:45px;
+border-radius:30px;
+box-shadow:0 25px 60px rgba(0,0,0,.18);
+}
+.badge{
+display:inline-block;
+padding:10px 18px;
+border-radius:999px;
+background:#fff3e7;
+color:#ff6b00;
+font-weight:600;
+}
+h1{
+margin:18px 0 10px;
+font-size:3.5rem;
+line-height:1.05;
+}
+.sub{font-size:1.4rem;color:#666}
+.desc{margin:22px 0;color:#555;line-height:1.8}
+.neon{
+margin:35px 0;
+display:inline-block;
+padding:18px 40px;
+font-size:3rem;
+font-weight:800;
+letter-spacing:2px;
+color:#fff9d8;
+background:#3b1600;
+border:4px solid #ffb347;
+border-radius:22px;
+box-shadow:0 0 10px #ff9a00,0 0 30px rgba(255,153,0,.8),inset 0 0 18px rgba(255,180,0,.4);
+animation:glow 1.8s infinite alternate;
+}
+@keyframes glow{
+from{transform:scale(1);box-shadow:0 0 10px #ff8c00,0 0 25px rgba(255,140,0,.7)}
+to{transform:scale(1.03);box-shadow:0 0 20px #ffd54a,0 0 55px rgba(255,180,0,1)}
+}
+.cta{
+display:inline-block;
+margin-top:10px;
+padding:15px 28px;
+background:#ff6b00;
+color:#fff;
+text-decoration:none;
+border-radius:14px;
+font-weight:700;
+}
+.mock{
+position:relative;
 display:flex;
 justify-content:center;
-align-items:center;
-padding:30px;
-
 }
-
-.card{
-
-background:white;
-width:100%;
-max-width:900px;
-border-radius:25px;
-padding:60px;
-box-shadow:0 25px 60px rgba(0,0,0,.2);
-
+.phone{
+width:320px;
+background:#111;
+border-radius:40px;
+padding:12px;
+box-shadow:0 25px 60px rgba(0,0,0,.3);
+transform:rotate(-8deg);
 }
-
-.badge{
-
-display:inline-block;
-background:#fff3e5;
-color:#ff7b00;
-padding:8px 18px;
-border-radius:50px;
-font-weight:600;
-margin-bottom:25px;
-
+.screen{
+background:linear-gradient(#fff,#fff8ef);
+height:620px;
+border-radius:30px;
+padding:22px;
 }
-
-h1{
-
-font-size:54px;
-color:#222;
-
+.search{
+margin:18px 0;
+padding:12px 16px;
+border-radius:12px;
+background:#f4f4f4;
+color:#999;
 }
-
-h2{
-
-font-size:26px;
-margin-top:10px;
-color:#666;
-font-weight:500;
-
+.place{
+display:flex;
+gap:10px;
+margin-top:14px;
 }
-
-p{
-
-margin-top:25px;
-font-size:18px;
-line-height:1.8;
-color:#555;
-
+.box{
+flex:1;
+height:120px;
+background:linear-gradient(135deg,#ffcf9b,#ffd);
+border-radius:14px;
 }
-
+.float{
+position:absolute;
+font-size:2rem;
+animation:float 3s ease-in-out infinite;
+}
+.f1{left:0;top:80px}
+.f2{right:10px;top:180px;animation-delay:1s}
+.f3{right:40px;bottom:80px;animation-delay:2s}
+@keyframes float{
+50%{transform:translateY(-15px)}
+}
 .features{
-
 margin-top:50px;
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
-gap:20px;
-
+grid-template-columns:repeat(4,1fr);
+gap:18px;
 }
-
 .feature{
-
-background:#fafafa;
+background:#fff;
 padding:25px;
-border-radius:18px;
+border-radius:20px;
+box-shadow:0 10px 30px rgba(0,0,0,.08);
 transition:.3s;
-
 }
-
-.feature:hover{
-
-transform:translateY(-6px);
-
-}
-
-.feature h3{
-
-margin-bottom:10px;
-color:#ff6b00;
-
-}
-
+.feature:hover{transform:translateY(-8px)}
+.feature h3{color:#ff6b00;margin:10px 0}
 footer{
-
-margin-top:60px;
+margin-top:40px;
 text-align:center;
-color:#777;
-
+color:#fff;
 }
-
-.progress{
-
-margin-top:35px;
-height:14px;
-background:#ececec;
-border-radius:30px;
-overflow:hidden;
-
+@media(max-width:900px){
+.hero{grid-template-columns:1fr}
+h1{font-size:2.6rem}
+.neon{font-size:2.1rem}
+.features{grid-template-columns:1fr}
+.phone{width:280px}
+.screen{height:520px}
 }
-
-.bar{
-
-height:100%;
-width:20%;
-background:linear-gradient(90deg,#ff8a00,#ff5f6d);
-animation:loading 2s infinite alternate;
-
-}
-
-@keyframes loading{
-
-0%{width:20%;}
-100%{width:40%;}
-
-}
-
-@media(max-width:768px){
-
-.card{
-
-padding:35px;
-
-}
-
-h1{
-
-font-size:38px;
-
-}
-
-h2{
-
-font-size:20px;
-
-}
-
-}
-
 </style>
-
 </head>
-
 <body>
+<div class="container">
+<nav>
+<div class="logo">📍 Nongkrong<span>.online</span></div>
+<div>Coming Soon</div>
+</nav>
 
+<div class="hero">
 <div class="card">
-
-<span class="badge">
-🚧 Sedang Dalam Pengembangan
-</span>
-
-<h1>Nongkrong.online</h1>
-
-<h2>Temukan Tempat Nongkrong Terbaik di Indonesia</h2>
-
-<p>
-
-Kami sedang membangun platform yang memudahkan Anda menemukan cafe,
-coffee shop, dan tempat nongkrong terbaik berdasarkan
-<b>review yang tervalidasi.</b>
-
+<div class="badge">🚧 Sedang Dalam Pengembangan</div>
+<h1>Temukan Tempat Nongkrong Terbaik di Indonesia</h1>
+<div class="sub">Review tervalidasi • Promo Merchant • Komunitas Nongkrong</div>
+<p class="desc">
+Kami sedang membangun platform untuk menemukan cafe, coffee shop, dan tempat nongkrong terbaik di Indonesia berdasarkan review yang tervalidasi.
 </p>
 
-<div class="progress">
+<div class="neon">COMING SOON</div>
 
-<div class="bar"></div>
+<p><strong>Kami sedang menyiapkan pengalaman nongkrong terbaik untuk Anda.</strong></p>
 
+<a href="mailto:info@nongkrong.online" class="cta">Hubungi Kami</a>
 </div>
 
-<div class="features">
-
-<div class="feature">
-<h3>📍 Cari Tempat</h3>
-Temukan cafe dan tempat nongkrong favorit di sekitar Anda.
+<div class="mock">
+<div class="float f1">❤️</div>
+<div class="float f2">📍</div>
+<div class="float f3">☕</div>
+<div class="phone">
+<div class="screen">
+<h2>Hai, Nongkronger! 👋</h2>
+<div class="search">🔍 Cari tempat nongkrong...</div>
+<div class="place">
+<div class="box"></div>
+<div class="box"></div>
+</div>
+<div class="place">
+<div class="box"></div>
+<div class="box"></div>
+</div>
+</div>
+</div>
+</div>
 </div>
 
-<div class="feature">
-<h3>⭐ Review Tervalidasi</h3>
-Review berasal dari pengunjung yang telah melakukan validasi.
-</div>
-
-<div class="feature">
-<h3>🎁 Promo Merchant</h3>
-Nikmati promo menarik langsung dari merchant.
-</div>
-
-<div class="feature">
-<h3>🏆 Leaderboard</h3>
-Kumpulkan poin dan jadilah reviewer terbaik.
-</div>
-
-</div>
+<section class="features">
+<div class="feature"><h3>📍 Cari Tempat</h3><p>Temukan cafe terbaik di sekitar Anda.</p></div>
+<div class="feature"><h3>⭐ Review Tervalidasi</h3><p>Review dari pengunjung yang telah berkunjung.</p></div>
+<div class="feature"><h3>🎁 Promo Merchant</h3><p>Dapatkan promo eksklusif dari merchant.</p></div>
+<div class="feature"><h3>🏆 Leaderboard</h3><p>Jadilah reviewer terbaik di komunitas.</p></div>
+</section>
 
 <footer>
-
-<h3>Coming Soon</h3>
-
-<p>
-
-Website publik (landing page) saat ini masih dalam proses
-pengembangan sebagai tahap awal aplikasi.
-
-</p>
-
-<p style="margin-top:15px;">
-© 2026 Nongkrong.online
-</p>
-
+<p>© 2026 Nongkrong.online • All Rights Reserved</p>
 </footer>
-
 </div>
-
 </body>
 </html>
